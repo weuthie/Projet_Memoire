@@ -17,6 +17,20 @@ class Alerte(db.Model):
     heure = db.Column(db.Integer)
     etat = db.Column(db.Integer,default=-1)
 
+class Users(db.Model):
+    userid = db.Column(db.Integer, primary_key=True)
+    nom = db.Column(db.String(15),nullable=False)
+    prenom = db.Column(db.String(55),nullable = False)
+    login = db.Column(db.String(255))
+    archive = db.Column(db.Integer,default=-1)
+
+class Admin(db.Model):
+    adminid = db.Column(db.Integer, primary_key=True)
+    login = db.Column(db.String(100),nullable=False,default="ousseynou@sa.com")
+    motdepasse = db.Column(db.String(55),nullable = False,default="mansour")
+    archive = db.Column(db.Integer,default=-1)
+
+
 def commit():
     return db.session.commit()
 
