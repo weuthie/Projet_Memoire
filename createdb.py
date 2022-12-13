@@ -8,7 +8,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 class Alerte(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True,autoincrement=True)
     motif = db.Column(db.String(255),nullable=False)
     plateau = db.Column(db.String(255),nullable = False)
     jour = db.Column(db.Integer)
@@ -18,14 +18,14 @@ class Alerte(db.Model):
     etat = db.Column(db.Integer,default=-1)
 
 class Users(db.Model):
-    userid = db.Column(db.Integer, primary_key=True)
+    userid = db.Column(db.Integer, primary_key=True,autoincrement=True)
     nom = db.Column(db.String(15),nullable=False)
     prenom = db.Column(db.String(55),nullable = False)
     login = db.Column(db.String(255))
     archive = db.Column(db.Integer,default=-1)
 
 class Admin(db.Model):
-    adminid = db.Column(db.Integer, primary_key=True)
+    adminid = db.Column(db.Integer, primary_key=True,autoincrement=True)
     login = db.Column(db.String(100),nullable=False,default="ousseynou@sa.com")
     motdepasse = db.Column(db.String(55),nullable = False,default="mansour")
     archive = db.Column(db.Integer,default=-1)
@@ -46,10 +46,13 @@ if __name__ == '__main__':
     with app.app_context():
         db.drop_all()
         db.create_all()
-        new_alerte = Alerte(id= 1,motif="test",plateau="1314",jour=2,mois=12,annee=2022,heure=10)
-        new_alerte_1 = Alerte(id= 2,motif="test_2",plateau="141",jour=2,mois=12,annee=2022,heure=10)
+        new_alerte = Alerte(motif="test",plateau="1314",jour=2,mois=12,annee=2022,heure=10)
+        new_alerte_1 = Alerte(motif="test_2",plateau="141",jour=2,mois=12,annee=2022,heure=10)
+        new_ = Alerte(motif="om",plateau="1441",jour=5,mois=12,annee=2022,heure=11)
         addRows(new_alerte)
         addRows(new_alerte_1)
+        addRows(new_)
+
         commit()
 
 
