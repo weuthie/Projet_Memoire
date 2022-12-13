@@ -7,6 +7,51 @@
     <title>Page Admin</title>
 </head>
 <body>
-    <p>Hello</p>
+    <div>
+        <p>Total Alerte : {{total_alerte}}</p>
+        <p>Total Accepter : {{total_accepter}}</p>
+        <p>Total Rejeter : {{total_rejeter}}</p>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Motif</th>
+                    <th>Plateau</th>
+                    <th>jour</th>
+                    <th>mois</th>
+                    <th>annee</th>
+                    <th>heure</th>
+                    <th>etat</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in range(nbuser) %}
+                <tr>
+                    <td><a href="#"> {{users[user].motif}}</a></td>
+                    <td><a href="#">{{users[user].plateau}}</a></td>
+                    <td><a href="">{{users[user].jour}}</a></td>
+                    <td><a href="">{{users[user].mois}}</a></td>
+                    <td><a href="">{{users[user].annee}}</a></td>
+                    <td><a href="">{{users[user].heure}}</a></td>
+                    <td><a href="">{{users[user].etat}}</a></td>
+                    <td>
+                        <form action="/accepter/{{users[user].id}}" method="post">
+                            <input class="accepter" type="submit" value="Accepter">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/rejeter/{{users[user].id}}" method="post">
+                            <input class="rejeter" type="submit" value="Rejeter">
+                        </form>
+                    </td>
+
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
