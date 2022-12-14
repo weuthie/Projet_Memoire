@@ -1,8 +1,8 @@
 from flask import Flask, redirect ,render_template , request, session, url_for, flash  
 from createdb import Alerte,addRows,commit,db,app
-#app = Flask(__name__)
-app.config['SECRET_KEY'] = 'vigi-predictive'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://mg_diop:weuthie@localhost/front'
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'groupe5'  #'vigi-predictive'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:groupe5@localhost/flask' #'postgresql://mg_diop:weuthie@localhost/front'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 

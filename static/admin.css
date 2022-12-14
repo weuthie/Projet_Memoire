@@ -1,0 +1,164 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr 80%;
+    grid-template-areas: 
+      "header"
+      "main";
+  }
+.header {
+    grid-area: header;
+    background-color:#FF6600;
+    height: 130px;
+
+  }
+.main {
+    grid-area: main;
+    background-color: #FFFFFF;
+    /* height: 800px; */
+    
+  }
+  .header {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows:repeat(7fr);
+    grid-template-areas: 
+      ". . . . . . . . . ."
+      "img3 . . . . . . . . ."
+      "img3 . . . . . . . . ."
+      "img3 mots . . . . . . creer ."
+      "img3 . . . . . . . . ."
+      "img3 . . . . . . . . ."
+      ". . . . . . . . . ."; 
+  }
+#img3 {
+    grid-area: img3;
+    background-color:#FF6600;
+    border-radius: 5px;
+    margin: 15px 0 0 20px;
+    width: 90px;
+    height: 90px;
+    
+
+  }
+#mots{
+    grid-area: mots;
+    background-color:#FF6600;
+   
+}
+#creer{
+  grid-area: creer;
+  background-color:#FFFFFF;
+  border-radius: 20px;
+  float: right;
+}
+
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows:1fr;
+    grid-template-areas: 
+      " users users users users users users users users users stat stat stat"; 
+  }
+.users {
+    grid-area: users;
+
+  }
+.stat{
+    grid-area: stat; 
+}
+
+.stat{
+  display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+    grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". . ."
+    ". . ."
+    ". stat1 ."
+    ". stat1 ."
+    ". stat1 ."
+    ". . ."
+    ". . .";
+}
+.stat1{
+   grid-area: stat1;
+   background-color: #FF6600;
+   /* height: 200px; */
+   /* width: 300px; */
+   border-radius: 20;
+
+}
+
+
+
+.adduser{
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  flex-direction: row;
+  margin-bottom: 25px;
+  margin-left: 10px;
+}
+p{
+  margin: 5px;
+  padding: 5px 180px;
+  text-align: center;
+  color: #FF6600;
+  /* width: 250px; */
+}
+.colorer{
+  margin: 15px 10px 0 10px;
+  text-align: center;
+  padding: 5px 70px; 
+  border-radius: 20px;
+  background-color:#FFFFFF ;
+  color: #000000;
+}
+
+button{
+  margin: 5px;
+  padding: 5px auto;
+  width: 180px;
+}
+
+.vert{
+  border-radius: 20px;
+  border-color: #FFFFFF;
+  background-color: #34C924;
+  color:#FFFFFF;
+}
+.rouge{
+  border-radius: 20px;
+  border-color: #FFFFFF;
+  background-color: #FF0000;
+  color:#FFFFFF;
+}
+
+.stat1{
+  display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    border-radius: 20px;
+    grid-template-areas: 
+    ". . ."
+    ". grid1 ."
+    ". . ."
+    ". grid2 ."
+    ". . .";
+}
+
+#grid1{
+  grid-area: grid1;
+  background-color: #FFFFFF;
+  /* width: 25px; */
+}
+
+#grid2{
+  grid-area: grid2;
+  background-color: #FFFFFF;
+  /* width: 25px; */
+}
+
+
+
