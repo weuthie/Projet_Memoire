@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{{url_for('static', filename='admin.css')}}" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src={{url_for('static', filename = "img/digipred.png" )}} sizes="30x30" id="img3"/>
+            <p id="mots">VIGIPREDICT</p>
+            <button  class="open-button" onclick="openForm()" id="creer">CREER</button>
+            <button  id="deco"type="submit" onclick="window.location.href='{{ url_for('home')}}';">DECONNEXION</button>
+        </div>
+        <div class="main">
+            
+            <div class="users">
+               <table>
+                    <thead>
+                        <tr class="adduser">
+                            <th>Prenom</th>
+                            <th>Nom</th>
+                            <th>Login</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in range(nbuser) %}
+                        <tr class="adduser">
+                            <td>{{users[user].prenom}}</td>
+                            <td>{{users[user].nom}}</td>
+                            <td>{{users[user].login}}</td>
+                            
+                            <td>
+                                <form action="" method="post">
+                                    <input class="vert" type="submit" value="Modifier">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="" method="post">
+                                    <input class="rouge"  type="submit" value="Supprimer">
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                       
+            </div>
+            
+
+           <div class="stat">
+               <div class="stat1">
+                    <p class="colorer" id="grid1">TOTAL ALERTE: </p>
+                    <p class="colorer" id="grid2">TOTAL ACCEPTER:</p>
+                    <p class="colorer" id="grid3">TOTAL REJETER:</p>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- popup -->
+    <div class="form-popup" id="myForm">
+        <div class="containerize">
+        <div class="centered"> 
+            <div class="couche1">
+                <div class="couche2">
+                    <button type="button" class="btn2" onclick="closeForm()">X</button>
+                    <img src={{url_for('static', filename = "img/icons.png" )}} id="img2"/>
+                    <p>USER</p>
+                    <form action="/admin" method="POST">
+            
+                        <input type="text" placeholder="Prenom" id="prenom" name="prenom"> 
+                        <input type="text" placeholder="Nom" id="nom" name="nom"> 
+                        <input type="email" placeholder="Email" id="email" name="email"> 
+                        <input type="password" placeholder="Password" id="pass" name="password"> 
+                        <button type="submit" id="btn">Creer</button>
+                      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- popup -->
+    <script src={{url_for('static', filename = "popup.js" )}}></script>
+</body>
+</html>

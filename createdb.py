@@ -6,6 +6,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:groupe5@localhost
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
+db.init_app(app)
 
 class Alerte(db.Model):
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
@@ -22,12 +23,15 @@ class Users(db.Model):
     nom = db.Column(db.String(15),nullable=False)
     prenom = db.Column(db.String(55),nullable = False)
     login = db.Column(db.String(255))
+    password = db.Column(db.String(255),nullable = False)
+    profil = db.Column(db.String(55),nullable = False,default="user")
     archive = db.Column(db.Integer,default=-1)
 
 class Admin(db.Model):
     adminid = db.Column(db.Integer, primary_key=True,autoincrement=True)
     login = db.Column(db.String(100),nullable=False,default="ousseynou@sa.com")
     motdepasse = db.Column(db.String(55),nullable = False,default="mansour")
+    profil = db.Column(db.String(55),nullable = False,default="admin")
     archive = db.Column(db.Integer,default=-1)
 
 

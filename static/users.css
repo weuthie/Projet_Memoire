@@ -1,7 +1,7 @@
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows:1fr 80%;
+    grid-template-rows:1fr 82%;
     grid-template-areas: 
       "header"
       "main";
@@ -72,7 +72,7 @@
 .stat{
   display: grid;
     grid-template-columns: 2fr 4fr 2fr;
-    grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:0.1fr 1fr 1fr 1fr 1fr 1fr 0.1fr;
     grid-template-areas: 
     ". . ."
     ". . ."
@@ -154,7 +154,7 @@ button{
 .stat1{
   display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.8fr 1fr 1fr 1fr 0.8fr;
     border-radius: 20px;
     grid-template-areas: 
     ". . ."

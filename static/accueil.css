@@ -1,0 +1,161 @@
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr;
+    grid-template-areas: 
+      "lefter righter righter";
+  }
+#lefter {
+    grid-area: lefter;
+    background-color:#FF6600;
+    height: 800px;
+  }
+#righter {
+    grid-area: righter;
+    background-color: #FFFFFF;
+    height: 800px;
+  }
+#lefter{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      ". . . ."
+      ". image image ."
+      ". image image ."
+      ". . . .";
+
+}
+#image{
+    grid-area: image;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    text-align: center;
+   
+    justify-content: center;
+    align-items: center;
+}
+#img1{
+    margin-top: 130px;
+    margin-right: 90px;
+    width: 150px;
+    height: 160px;
+}
+
+#righter{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:    1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      ". . . . . ."
+      ". . form1 form1 . ."
+      ". . form1 form1 . ."
+      ". . form1 form1 . ."
+      ". . form1 form1 . ."
+      ". . . . . .";
+
+}
+#form1{
+    grid-area: form1;
+    background-color: #FF6600;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+#form1{
+    display: grid;
+    grid-template-columns: 1fr 10fr 10fr 1fr;
+    grid-template-rows:    1fr 16fr 16fr 1fr;
+    grid-template-areas: 
+      " . . . . "
+      " . form2 form2 . "
+      " . form2 form2 . "
+      ". . . . ";
+
+}
+#form2{
+    grid-area: form2;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    height:500px;
+    justify-content: center;
+    align-items: center;
+}
+
+#form2{
+    display: grid;
+    grid-template-columns: 1fr 8fr 8fr 1fr;
+    grid-template-rows:    1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      " . image image . "
+      " . form form . "
+      " . form form . "
+      ". form form . ";
+
+}
+img{
+    grid-area: image;
+    background-color: #FFFFFF;
+    margin-left: 78px;
+    width: 170px;
+    height: 130px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center; 
+}
+form{
+    grid-area: form;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows:    1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-row-gap: 12px;
+    grid-template-areas: 
+      " .  . . . . ."
+      " . email email email email . "
+      " . pass pass pass pass . "
+      " . . . . . ."
+      ". . btn btn . . "
+      ". . . . . .";
+
+}
+
+#email{
+    grid-area: email;
+    background-color: #FF6600;
+    height: 30px;
+    border-radius: 10px;
+}
+#pass{
+    grid-area: pass;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #FF6600;
+}
+
+#btn{
+    grid-area: btn;
+    background-color: #FF6600;
+    height: 30px;
+    border-radius: 20px;
+} 
+#img2{
+    width: 100px;
+    height: 100px;
+    margin-left: 120px;
+}

@@ -5,6 +5,7 @@
     grid-template-areas: 
       "header"
       "main";
+  
   }
 .header {
     grid-area: header;
@@ -26,7 +27,7 @@
       ". . . . . . . . . ."
       "img3 . . . . . . . . ."
       "img3 . . . . . . . . ."
-      "img3 mots . . . . . . creer ."
+      "img3 mots . . . . . . creer deco"
       "img3 . . . . . . . . ."
       "img3 . . . . . . . . ."
       ". . . . . . . . . ."; 
@@ -52,6 +53,14 @@
   border-radius: 20px;
   float: right;
 }
+
+#deco{
+  grid-area: deco;
+  background-color:#FFFFFF;
+  border-radius: 20px;
+  float: right; 
+}
+
 
 
 .main {
@@ -100,13 +109,22 @@
   margin-bottom: 25px;
   margin-left: 10px;
 }
-p{
+th{
   margin: 5px;
-  padding: 5px 180px;
+  padding: 5px 80px;
   text-align: center;
   color: #FF6600;
   /* width: 250px; */
 }
+td{
+
+    margin: 5px;
+    padding: 5px 80px;
+    text-align: center;
+    color: #FF6600;
+    /* width: 250px; */
+}
+
 .colorer{
   margin: 15px 10px 0 10px;
   text-align: center;
@@ -143,8 +161,8 @@ button{
     grid-template-areas: 
     ". . ."
     ". grid1 ."
-    ". . ."
     ". grid2 ."
+    ". grid3 ."
     ". . .";
 }
 
@@ -159,6 +177,112 @@ button{
   background-color: #FFFFFF;
   /* width: 25px; */
 }
+#grid3{
+  grid-area: grid3;
+  background-color: #FFFFFF;
+  /* width: 25px; */
+}
+
+/* popup */
+
+#myForm{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  background-color: transparent;
+ 
+}
+.form-popup{
+  display: None;
+    z-index: 100;
+    width: 200px;
+    height: 50px;
+  
+  }
+  
+
+.containerize {
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr;
+  grid-template-rows:1fr;
+  grid-template-areas: 
+    ". centered .";
+  
+}
+
+.centered {
+  grid-area: centered;
+  background-color: #FFFFFF;
+  height: 800px;
+}
+
+.centered{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows:    1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+    ". . . . . ."
+    ". couche1  couche1 couche1 couche1  ."
+    ". couche1  couche1 couche1 couche1  ."
+    ". couche1  couche1 couche1 couche1  ."
+    ". couche1  couche1 couche1 couche1  ."
+    ". . . . . .";
+
+}
+.couche1{
+  grid-area: couche1;
+  background-color: #FF6600;
+  border-radius: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 
 
+.couche1{
+  display: grid;
+  grid-template-columns: 1fr 10fr 10fr 1fr;
+  grid-template-rows:    1fr 16fr 16fr 1fr;
+  grid-template-areas: 
+    " . . . . "
+    " . couche2 couche2 . "
+    " . couche2 couche2 . "
+    ". . . . ";
 
+}
+.couche2{
+  grid-area: couche2;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  height:500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.couche2 input{
+  height: 30px;
+  width: 250px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #FF6600;
+  border-color: #FFFFFF #FFFFFF #000000 #FFFFFF;
+  /* border-bottom: 1px solid #ccc; */
+} 
+
+#btn{
+  grid-area: btn;
+  background-color: #FF6600;
+  height: 30px;
+  width: 80px;
+  border-color: #FFFFFF;
+  border-radius: 20px;
+} 
+
+.btn2{
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  float: right;
+}

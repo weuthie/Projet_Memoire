@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='accueil.css')}}" />
+    <title>Document</title>
+</head>
+<body>>
+    <div id="container">
+        <div id="lefter">
+           <div id="image">
+            <img src={{url_for('static', filename = "img/digipred.png" )}} id="img1"/>
+           </div>
+        </div>
+        <div id="righter">
+           <div id="form1">
+                <div id="form2">
+                    <img src={{url_for('static', filename = "img/icons.png" )}} id="img2"/>
+                    <form action="/"  method="POST"> 
+                        <input type="email" placeholder="Email" id="email" name="email"> 
+                        <input type="password" placeholder="Password" id="pass" name="password"> 
+                        <button type="submit" id="btn">Login</button>
+                 </form>
+                </div>
+           </div>
+        </div>
+    </div>
+    
+</body>
+</html>
