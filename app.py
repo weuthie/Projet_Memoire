@@ -43,7 +43,7 @@ def admin():
 
 
 
-@app.route('/users/')
+@app.route('/users/', methods=["GET", "POST"])
 def index():
         users = db.session.query(Alerte).filter(
         Alerte.etat == -1
@@ -67,12 +67,26 @@ def index():
         # "annee":user.annee,
         # "heure":user.heure,
         # "etat":user.etat}
+        # if request.method == "POST":
+        #     comments = Alerte(
+        #     comment = request.form["content"],
+        #     )
+        #     db.session.add(comments)
+        #     db.session.commit()
         return render_template('users.html',nbuser=nbuser,users=users , 
         total_rejeter=total_rejeter,
         total_accepter=total_accepter,
         total_alerte=total_alerte)
     
-
+@app.route('/comment/<int:id>', methods=["POST","GET"])
+def comment(id):
+    user =  Alerte.query.get_or_404(id)
+    if request.method == "POST":
+        user.comment = request.form["content"]
+        commit()
+        if not user.comment:
+            pass
+    return redirect('/users')
     
 
 @app.route('/accepter/<int:id>', methods=["POST","GET"])
@@ -93,4 +107,4 @@ def rejeter(id):
 
 
 db.init_app(app)
-app.run(debug=True, port=5001)
+app.run(debug=True, port=5000)

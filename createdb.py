@@ -16,6 +16,7 @@ class Alerte(db.Model):
     mois = db.Column(db.Integer)
     annee = db.Column(db.Integer)
     heure = db.Column(db.Integer)
+    comment = db.Column(db.String(255))
     etat = db.Column(db.Integer,default=-1)
 
 class Users(db.Model):

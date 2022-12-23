@@ -30,22 +30,45 @@
                     <tbody>
                         {% for user in range(nbuser) %}
                         <tr class="adduser">
-                            <td>{{users[user].motif}}</td>
-                            <td>{{users[user].plateau}}</td>
-                            <td>{{users[user].jour}}</td>
-                            <td>{{users[user].mois}}</td>
-                            <td>{{users[user].annee}}</td>
-                            <td>{{users[user].heure}}</th>
-                            <td>
-                                <form action="/accepter/{{users[user].id}}" method="post">
-                                    <input class="vert" type="submit" value="Accepter">
+                            <td class="pad">{{users[user].motif}}</td>
+                            <td class="pad">{{users[user].plateau}}</td>
+                            <td class="pad">{{users[user].jour}}</td>
+                            <td class="pad">{{users[user].mois}}</td>
+                            <td class="pad">{{users[user].annee}}</td>
+                            <td class="pad">{{users[user].heure}}</th>
+                            <td class="espace">
+                                <form action="/accepter/{{users[user].id}}" method="post" >
+                                    <input class="vert"  type="submit" value="Accepter">
                                 </form>
                             </td>
-                            <td>
-                                <form action="/rejeter/{{users[user].id}}"  method="post">
+                            <td class="espace">
+                                <form action="/rejeter/{{users[user].id}}"  method="post" >
                                     <input class="rouge"  type="submit" value="Rejeter">
                                 </form>
+                            </td>     
+                            <td class="espace">
+                                <form method="POST" action="/comment/{{users[user].id}}">
+                                    <input type="checkbox" id="click">
+                                    <label for="click" class="click-me">Commentaire</label>
+                                  <div class="content"> 
+                                      <div class="text">
+                                        COMMENTAIRE
+                                     </div>
+                                        <label for="click" id="temp">x</label>
+          
+                                      <br>
+                                      <textarea name="content"
+                          
+                                              rows="15"
+                                              cols=" 50"
+                                              ></textarea>
+                                      <br>
+                                      <button  id="bouton">Commentaire</button>
+                                  </div>
+                                    <!-- </div> -->
+                              </form>
                             </td>
+                           
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -53,6 +76,34 @@
                 
                       
             </div>
+            <!-- <script>
+                function comment(form){
+                    onsubmit="return comment(this);
+                    swal({
+                        confirmButtonColor: '#FF6600',
+                        confirmButtonText: 'Commentaire',
+                        showCancelButton: true,
+                        cancelButtonColor: '#d33',
+                        closeOnConfirm: false,
+                        closeOnCancel: false,
+                        html:
+                        '<form method="POST" action="/users/">'+                       
+                        '<h1>Dire les raisons de votre acceptation ou rejet <h1>'+
+                        '<textarea  rows="5" cols="50"  name="text"  id="Name"></textarea>'+
+                        '</form>'
+                      
+                      
+                    },)
+                    
+                   .then(function (vrai) {
+                        if (vrai) {
+                            form.submit();
+                        }
+                   
+                    });
+                    return false;
+                    }
+            </script> -->
            <div class="stat">
                <div class="stat1">
                     <p class="colorer" id="grid1">TOTAL ALERTE: {{total_alerte}}</p>
@@ -62,5 +113,6 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 </body>
 </html>
